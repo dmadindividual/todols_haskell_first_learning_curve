@@ -25,10 +25,10 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
-      Todos.Api
-      Todos.Types
-      Todos.Views
+      EntryPoint
+      Todos.Models
+      Todos.Render
+      Todos.Router
   other-modules:
       Paths_todolist
   autogen-modules:

@@ -1,6 +1,6 @@
 module Main (main) where
 
-import Lib
+import EntryPoint
 
 main :: IO ()
-main = startApp
+main = bootServer
