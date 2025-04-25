@@ -1,49 +1,49 @@
-**https://github.com/dmadindividual/todols_haskell_first_learning_curve**
-
 ---
 
 ```markdown
-# Haskell Todo List Application
+#  Haskell Todo List Application
 
-This project is a simple and functional Todo List web application built using Haskell. It leverages the Servant framework for defining APIs, Blaze for HTML rendering, and HTMX for interactive frontend behavior without relying on JavaScript frameworks.
+A lightweight, functional Todo List web application built entirely in Haskell. This project showcases full-stack development using idiomatic Haskell practices, serving as a learning milestone in the journey of mastering Haskell for web development.
 
-The application was created as part of an early learning curve in full-stack Haskell development, demonstrating how to build a complete web system using idiomatic Haskell principles.
+It combines server-side rendering, type-safe API design, and minimal JavaScript interactivity via HTMX.
 
 ---
 
 ## Features
 
-- Create, update, and delete Todo items
-- Server-side HTML rendering using Blaze
-- Responsive UI styled with Tailwind CSS via CDN
-- Interactive actions using HTMX for AJAX-style behavior
-- In-memory storage using `IORef`
-- Type-safe APIs defined using Servant
+- Create, update, and delete todo items
+- Fully server-rendered UI with [Blaze](https://hackage.haskell.org/package/blaze-html)
+- Clean, responsive design using [Tailwind CSS](https://tailwindcss.com/) (via CDN)
+- Dynamic interactions using [HTMX](https://htmx.org/)
+- In-memory state management using `IORef`
+- Type-safe API structure using [Servant](https://hackage.haskell.org/package/servant)
+- Built-in CORS support and request logging
+
+
+## 🛠 Technologies Used
+
+| Layer        | Tool/Library |
+|--------------|--------------|
+| Language     | Haskell |
+| API Routing  | Servant |
+| HTML Rendering | Blaze |
+| State Management | `IORef` |
+| Frontend Interactivity | HTMX |
+| Styling | Tailwind CSS |
+| Middleware | `wai-cors`, request logging |
 
 ---
 
-## Technologies Used
+## 🚀 Getting Started
 
-- **Language**: Haskell
-- **Routing/API**: [Servant](https://hackage.haskell.org/package/servant)
-- **HTML Rendering**: [Blaze](https://hackage.haskell.org/package/blaze-html)
-- **State Management**: `IORef`
-- **UI Interactivity**: [HTMX](https://htmx.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) (via CDN)
-- **Middleware**: CORS support, request logging via `wai` middlewares
+### 📋 Prerequisites
 
----
+Make sure you have:
 
-## Getting Started
+- [GHC (Glasgow Haskell Compiler)](https://www.haskell.org/ghc/)
+- [Stack](https://docs.haskellstack.org/) **or** [Cabal](https://www.haskell.org/cabal/)
 
-### Prerequisites
-
-Ensure you have the following installed:
-
-- [GHC (The Glasgow Haskell Compiler)](https://www.haskell.org/ghc/)
-- [Stack](https://docs.haskellstack.org/en/stable/README/) or [Cabal](https://www.haskell.org/cabal/)
-
-### Installation
+### 🔧 Installation
 
 1. Clone the repository:
 
@@ -52,21 +52,23 @@ Ensure you have the following installed:
    cd todols_haskell_first_learning_curve
    ```
 
-2. Build and run the project using Stack:
+2. Build and run the project:
+
+   With **Stack**:
 
    ```bash
    stack build
    stack exec todols-haskell-first-learning-curve-exe
    ```
 
-   Or using Cabal:
+   With **Cabal**:
 
    ```bash
    cabal build
    cabal run
    ```
 
-3. Open your browser and visit:
+3. Open your browser and navigate to:
 
    ```
    http://localhost:8081
@@ -74,57 +76,55 @@ Ensure you have the following installed:
 
 ---
 
-## Project Structure
+##  Project Structure
 
 ```
 src/
-├── Lib.hs               -- Application entry point and server logic
+├── EntryPoint.hs              -- Application entry and server setup
 ├── Todos/
-│   ├── Api.hs           -- API type definitions using Servant
-│   ├── Types.hs         -- Data types for Todo and form input
-│   ├── Views.hs         -- Blaze HTML rendering functions
+│   ├── Models.hs          -- API routes and type definitions
+│   ├── Router.hs        -- Data types for todos and forms
+│   ├── Render.hs        -- Blaze-based HTML rendering
 ```
 
 ---
 
-## How It Works
+## 🔍 How It Works
 
-- **Todos.Api** defines the RESTful API endpoints.
-- **Todos.Types** contains data structures used in the app (`Todo`, `CreateTodoForm`, etc.).
-- **Todos.Views** renders full HTML pages and partial components using Blaze.
-- **Lib.hs** initializes the app, sets up CORS, routes, and an in-memory `IORef` to manage todo state.
+- **Todos.Router**: Defines API routes using Servant.
+- **Todos.Models**: Houses data types like `Todo` and `CreateTodoForm`.
+- **Todos.Render**: Generates dynamic and partial HTML using Blaze.
+- **EntryPoint.hs**: Bootstraps the server, sets up CORS, and initializes the `IORef` state.
 
-The frontend behavior (adding, updating, deleting todos) is handled using HTMX attributes embedded in the HTML. No additional JavaScript or frontend framework is required.
-
----
-
-## Development Notes
-
-- Todos are stored in memory using `IORef`. Data will be reset on server restart.
-- Tailwind CSS is included via CDN for rapid prototyping and clean styling.
-- HTMX is used to make the app interactive while keeping the frontend simple and declarative.
+HTMX enables asynchronous UI updates through HTML attributes—no JavaScript framework is required.
 
 ---
 
-## Future Improvements
+## 🧪 Development Notes
 
-- Implement persistent storage (e.g., SQLite, PostgreSQL)
-- Add todo editing functionality
-- Introduce filtering (All / Active / Completed)
-- Add authentication and user sessions
-- Unit and integration testing using HSpec or Servant Test
+- Todos are stored in-memory (`IORef`) and will reset on server restart.
+- Tailwind CSS is loaded via CDN for quick styling.
+- HTMX handles interactivity declaratively—perfect for quick iterations.
 
 ---
 
-## License
+##  Future Improvements
+
+- Persistent storage (e.g., SQLite or PostgreSQL)
+- Edit functionality for todos
+- Filtering (All / Active / Completed)
+- User authentication and sessions
+- Add unit/integration tests with HSpec or Servant Test
+
+---
+
+## 📄 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
-## Author
+## 👤 Author
 
-[dmadindividual](https://github.com/dmadindividual)
+Created by [@dmadindividual](https://github.com/dmadindividual) — a first milestone in full-stack Haskell exploration.
 ```
-
----
