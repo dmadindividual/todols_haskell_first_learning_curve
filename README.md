@@ -20,7 +20,7 @@ It combines server-side rendering, type-safe API design, and minimal JavaScript 
 - Built-in CORS support and request logging
 
 
-## 🛠 Technologies Used
+## Technologies Used
 
 | Layer        | Tool/Library |
 |--------------|--------------|
@@ -34,9 +34,6 @@ It combines server-side rendering, type-safe API design, and minimal JavaScript 
 
 ---
 
-## 🚀 Getting Started
-
-### 📋 Prerequisites
 
 Make sure you have:
 
@@ -118,7 +115,7 @@ HTMX enables asynchronous UI updates through HTML attributes—no JavaScript fra
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
